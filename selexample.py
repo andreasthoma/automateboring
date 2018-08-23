@@ -18,5 +18,5 @@ for i in range(3):
     typeElem.click()
     idElem.submit()
     browser.refresh()
-    
+
 # TODO: Refresh the browser and do it again.
