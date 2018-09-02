@@ -1,12 +1,22 @@
 import requests
 
-'Authorization: Token 2415d176baf5bc53c2f748d5ca7df85dfd374e18'
+headers = {
+  'Accept': 'application/json',
+  'Authorization': 'Token 2415d176baf5bc53c2f748d5ca7df85dfd374e18'
+}
 
+# parameters = {'wine'}
 
-parameters = {'wine': 'id'}
+response = requests.get('https://api.globalwinescore.com/globalwinescores/latest/?114959', headers=headers)
 
-response = requests.get('https://api.globalwinescore.com/globalwinescores/latest/?114959')
+responseBody = response.json()
 
-data = response.json()
+print(responseBody.items())
 
-print(response)
+# parameters = {'wine': 'id'}
+#
+# response = requests.get('https://api.globalwinescore.com/globalwinescores/latest/?114959', params = parameters)
+#
+# data = response.json()
+#
+# print(response)
